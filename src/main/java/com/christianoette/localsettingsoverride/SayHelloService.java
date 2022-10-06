@@ -18,16 +18,19 @@ public class SayHelloService {
     @Value("${output.dynamic-base-property}")
     private String dynamicProperty;
 
+    private final String conditionalText;
     private final Environment environment;
 
-    public SayHelloService(final Environment environment) {
+    public SayHelloService(final Environment environment, final String conditionalText) {
         this.environment = environment;
+        this.conditionalText = conditionalText;
     }
 
 
     public void printWelcome() {
 
         log.info("dynamic-property: "+dynamicProperty);
+        log.info("conditionalText: "+conditionalText);
         log.info(outputText + " / Active Profiles: {}", (Object[]) environment.getActiveProfiles());
     }
 }

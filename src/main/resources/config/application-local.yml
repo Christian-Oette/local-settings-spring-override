@@ -2,3 +2,6 @@ VAR1: "no"
 
 output:
   text: Hello Local Configuration
+  condition:
+    selection:
+      value: "two"

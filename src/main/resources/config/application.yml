@@ -1,5 +1,10 @@
+# This variable is used to define another property (see below). It can be overridden
 VAR1: "yes"
 
 output:
-  text: Hello Default configuration
   dynamic-base-property: '#{"${VAR1:}".equals("yes")? "base-value":"overridden-value"}'
+  text: Hello Default configuration
+  # You can also set a property which is used as a condition for different java configurations
+  condition:
+    selection:
+      value: "one"
