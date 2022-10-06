@@ -1,0 +1,5 @@
+VAR1: "yes"
+
+output:
+  text: Hello Default configuration
+  dynamic-base-property: '#{"${VAR1:}".equals("yes")? "base-value":"overridden-value"}'
